@@ -14,12 +14,12 @@ public class ViewUtil
   public static Bitmap blur(Bitmap paramBitmap, Context paramContext)
   {
     Object localObject = RenderScript.create(paramContext);
-    paramContext = Allocation.createFromBitmap((RenderScript)localObject, paramBitmap);
-    localObject = ScriptIntrinsicBlur.create((RenderScript)localObject, paramContext.getElement());
-    ((ScriptIntrinsicBlur)localObject).setInput(paramContext);
+    Allocation allocation = Allocation.createFromBitmap((RenderScript) localObject, paramBitmap);
+    localObject = ScriptIntrinsicBlur.create((RenderScript)localObject, allocation.getElement());
+    ((ScriptIntrinsicBlur)localObject).setInput(allocation);
     ((ScriptIntrinsicBlur)localObject).setRadius(25.0F);
-    ((ScriptIntrinsicBlur)localObject).forEach(paramContext);
-    paramContext.copyTo(paramBitmap);
+    ((ScriptIntrinsicBlur)localObject).forEach(allocation);
+    allocation.copyTo(paramBitmap);
     return paramBitmap;
   }
   
@@ -39,8 +39,8 @@ public class ViewUtil
   
   public static float getTextHeight(Paint paramPaint)
   {
-    paramPaint = paramPaint.getFontMetrics();
-    return paramPaint.bottom - paramPaint.top;
+    Paint.FontMetrics fontMetrics = paramPaint.getFontMetrics();
+    return fontMetrics.bottom - fontMetrics.top;
   }
   
   public static float getTextRectHeight(Paint paramPaint, String paramString)

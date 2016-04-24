@@ -8,10 +8,10 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.Style;
 import android.graphics.RectF;
-import android.graphics.Shader.TileMode;
+import android.graphics.Shader;
+import android.nla.org.gotway.util.ViewUtil;
 import android.util.AttributeSet;
 import android.view.View;
-import com.reb.hola.util.ViewUtil;
 
 public class BatterView
   extends View
@@ -20,7 +20,7 @@ public class BatterView
   private ObjectAnimator anim;
   private float mCenterX;
   private int mPower = 0;
-  private int mPowerColor = -14288878;
+  private final int mPowerColor = 0x25F812;
   private Paint mPowerPaint;
   private int mRectColor = -1;
   private RectF mRectF = new RectF();
@@ -35,10 +35,9 @@ public class BatterView
   public BatterView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    paramContext = new int[3];
-    paramContext[0] = -12303292;
-    paramContext[2] = -12303292;
-    this.mShadeColor = paramContext;
+    this.mShadeColor = new int[3];
+    this.mShadeColor[0] = -12303292;
+    this.mShadeColor[2] = -12303292;
     init();
   }
   
