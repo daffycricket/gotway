@@ -2,6 +2,7 @@ package android.nla.org.gotway.ui.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.nla.org.gotway.R;
 import android.nla.org.gotway.ble.cmd.CMDMgr;
 import android.nla.org.gotway.ble.profile.BleCore;
 import android.nla.org.gotway.ble.profile.BleProfileActivity;
@@ -29,10 +30,10 @@ public class MainFragment
     private TemperatureView temperView;
 
     private void initView() {
-        this.temperView = ((TemperatureView) this.mRootView.findViewById(R.id.scan));
+        this.temperView = ((TemperatureView) this.mRootView.findViewById(R.id.temper));
         this.batterView = ((BatterView) this.mRootView.findViewById(R.id.batter));
         this.dashBoardView = ((DashBoardView) this.mRootView.findViewById(R.id.dashBoard));
-        this.mRootView.findViewById(2131361799).setOnClickListener(this);
+        this.mRootView.findViewById(R.id.scan).setOnClickListener(this);
     }
 
     public void onAttach(Activity paramActivity) {
@@ -41,8 +42,9 @@ public class MainFragment
     }
 
     public void onClick(View paramView) {
+        this.act.writeData(CMDMgr.CALL);
         switch (paramView.getId()) {
-            case 2131361799:
+            case R.id.scan:
                 if (this.act.isConnected()) {
                     new DisconnDialog().show(getFragmentManager(), null);
                     return;
@@ -56,7 +58,6 @@ public class MainFragment
             default:
                 return;
         }
-        this.act.writeData(CMDMgr.CALL);
     }
 
     public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {

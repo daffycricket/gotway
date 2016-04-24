@@ -1,6 +1,16 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <!--&lt;!&ndash; Default screen margins, per the Android Design guidelines. &ndash;&gt;-->
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>-->
+    <!--<dimen name="activity_vertical_margin">16dp</dimen>-->
+    <!--<dimen name="fab_margin">16dp</dimen>-->
+
+    <dimen name="activity_horizontal_margin">25.0dip</dimen>
+    <dimen name="activity_vertical_margin">25.0dip</dimen>
+    <dimen name="item_height">60.0dip</dimen>
+    <dimen name="settingItemTittlePaddingBottom">8.0dip</dimen>
+    <dimen name="settingItemTittleHeight">65.0dip</dimen>
+    <dimen name="settingItemTittleText">16.0sp</dimen>
+    <dimen name="settingItemText">16.0sp</dimen>
+    <dimen name="about_version_top_margin">150.0dip</dimen>
+    <dimen name="about_version_text">20.0sp</dimen>
 </resources>

@@ -2,6 +2,7 @@ package android.nla.org.gotway.ui.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.nla.org.gotway.R;
 import android.nla.org.gotway.ble.profile.BleProfileActivity;
 import android.nla.org.gotway.ui.adapter.SettingListAdapter;
 import android.nla.org.gotway.util.DebugLogger;

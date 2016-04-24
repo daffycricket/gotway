@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.nla.org.gotway.R;
 import android.nla.org.gotway.share.SharePeference;
 import android.nla.org.gotway.ui.activity.MainActivity;
 import android.os.Bundle;
@@ -16,10 +17,10 @@ public class ExitDialog
         extends DialogFragment {
     public Dialog onCreateDialog(Bundle paramBundle) {
         Builder builder = new Builder(getActivity());
-        View localView = LayoutInflater.from(getActivity()).inflate(2130903049, null);
-        final CheckBox localCheckBox = (CheckBox) localView.findViewById(2131361808);
+        View localView = LayoutInflater.from(getActivity()).inflate(R.layout.frgament_exit_dialog, null);
+        final CheckBox localCheckBox = (CheckBox) localView.findViewById(R.id.remember);
 
-        localView.findViewById(2131361806).setOnClickListener(new OnClickListener() {
+        localView.findViewById(R.id.yes).setOnClickListener(new OnClickListener() {
             public void onClick(View paramAnonymousView) {
                 int i = 2;
                 if (localCheckBox.isChecked()) {
@@ -31,7 +32,7 @@ public class ExitDialog
             }
         });
 
-        localView.findViewById(2131361807).setOnClickListener(new OnClickListener() {
+        localView.findViewById(R.id.no).setOnClickListener(new OnClickListener() {
             public void onClick(View paramAnonymousView) {
                 int i = 0;
                 if (localCheckBox.isChecked()) {

@@ -8,6 +8,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.nla.org.gotway.R;
 import android.nla.org.gotway.ble.cmd.CMDMgr;
 import android.nla.org.gotway.ble.scanner.ScannerFragment;
 import android.nla.org.gotway.data.Data0x00;
@@ -148,7 +149,7 @@ public class BleProfileActivity
     }
 
     public void onNotifyEnable() {
-        toast(R.string.notify_enable);
+        toast(R.string.device_conn);
     }
 
     public void onReciveCurrentData(Data0x00 paramData0x00) {
@@ -204,12 +205,12 @@ public class BleProfileActivity
         if (this.mService != null) {
             checkBle();
             if (!this.mService.isConnected()) {
-                toast(R.string.activity_ble_profile_write_data1);
+                toast(R.string.device_disConn);
             }
             if (this.mCurrentSpeed <= 0.3F) {
                 return this.mService.write(paramArrayOfByte);
             }
-            toast(R.string.activity_ble_profile_write_data2);
+            toast(R.string.cant_send_when_moving);
         }
         return false;
 

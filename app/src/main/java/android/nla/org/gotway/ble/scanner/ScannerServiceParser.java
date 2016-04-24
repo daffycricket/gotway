@@ -171,17 +171,17 @@ public class ScannerServiceParser
   {
     try
     {
-      paramArrayOfByte = new String(paramArrayOfByte, paramInt1, paramInt2, "UTF-8");
-      return paramArrayOfByte;
+      String toReturn  = new String(paramArrayOfByte, paramInt1, paramInt2, "UTF-8");
+      return toReturn;
     }
-    catch (UnsupportedEncodingException paramArrayOfByte)
+    catch (UnsupportedEncodingException uee)
     {
-      Log.e("ScannerServiceParser", "Unable to convert the complete local name to UTF-8", paramArrayOfByte);
+      Log.e("ScannerServiceParser", "Unable to convert the complete local name to UTF-8", uee);
       return null;
     }
-    catch (IndexOutOfBoundsException paramArrayOfByte)
+    catch (IndexOutOfBoundsException ioobe)
     {
-      Log.e("ScannerServiceParser", "Error when reading complete local name", paramArrayOfByte);
+      Log.e("ScannerServiceParser", "Error when reading complete local name", ioobe);
     }
     return null;
   }
@@ -215,9 +215,3 @@ public class ScannerServiceParser
     return (paramArrayOfByte[(paramInt + 1)] & 0xFF) << 8 | (i & 0xFF) << 0;
   }
 }
-
-
-/* Location:              C:\tmp\dex2jar-2.0\classes-dex2jar.jar!\com\reb\hola\ble\scanner\ScannerServiceParser.class
- * Java compiler version: 6 (50.0)
- * JD-Core Version:       0.7.1
- */

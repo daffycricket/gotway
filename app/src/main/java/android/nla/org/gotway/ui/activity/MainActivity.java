@@ -2,6 +2,7 @@ package android.nla.org.gotway.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.nla.org.gotway.R;
 import android.nla.org.gotway.ble.profile.BleProfileActivity;
 import android.nla.org.gotway.ble.profile.BleService;
 import android.nla.org.gotway.data.Data0x00;
@@ -63,7 +64,7 @@ public class MainActivity
 
             // TODO Check behavior
             this.mLastBackTime = l;
-            toast(R.string.activity_main_on_key_down);
+            toast(R.string.exit_by_muilt_click);
             return true;
         }
         return super.onKeyDown(paramInt, paramKeyEvent);
